@@ -1,0 +1,44 @@
+import React, { Component } from 'react';
+
+class Habit extends Component {
+  handleIncrement = () => {
+    this.props.onIncrement(this.props.habit);
+  };
+  handleDecrement = () => {
+    this.props.onDecrement(this.props.habit);
+  };
+  handleDelete = () => {
+    this.props.onDelete(this.props.habit);
+  };
+  render() {
+    const {
+      habit: { name, count },
+    } = this.props;
+    return (
+      <div>
+        <span className='habit-name'>{name}</span>
+        <span className='habit-count'>{count}</span>
+        <button
+          className='habit-button habit-increment'
+          onClick={this.handleIncrement}
+        >
+          <i className='fas fa-plus-square'></i>
+        </button>
+        <button
+          className='habit-button habit-decrement'
+          onClick={this.handleDecrement}
+        >
+          <i className='fas fa-minus-square'></i>
+        </button>
+        <button
+          className='habit-button habit-delete'
+          onClick={this.handleDelete}
+        >
+          <i className='fas fa-trash-alt'></i>
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Habit;
