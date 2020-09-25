@@ -15,7 +15,7 @@ class Habit extends Component {
       habit: { name, count },
     } = this.props;
     return (
-      <div>
+      <li>
         <span className='habit-name'>{name}</span>
         <span className='habit-count'>{count}</span>
         <button
@@ -36,7 +36,7 @@ class Habit extends Component {
         >
           <i className='fas fa-trash-alt'></i>
         </button>
-      </div>
+      </li>
     );
   }
 }

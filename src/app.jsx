@@ -33,15 +33,11 @@ class App extends Component {
     const count = habits[index].count - 1;
     habits[index].count = count < 0 ? 0 : count;
     this.setState({ habits });
-    this.setState({
-      totalCount: count < 0 ? this.state.totalCount : this.state.totalCount - 1,
-    });
   };
 
   handleDelete = (habit) => {
     const habits = this.state.habits.filter((item) => item !== habit);
     this.setState({ habits });
-    this.setState({ totalCount: this.state.totalCount - habit.count });
   };
 
   handleReset = () => {
@@ -52,7 +48,9 @@ class App extends Component {
   render() {
     return (
       <>
-        <Header totalCount={this.state.totalCount} />
+        <Header
+          totalCount={this.state.habits.filter((item) => item.count > 0).length}
+        />
         <InputHabit onAdd={this.handleAdd} />
         <Habits
           habits={this.state.habits}
