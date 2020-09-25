@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class InputHabit extends Component {
+class InputHabit extends PureComponent {
   textInput = React.createRef();
   onSubmit = (e) => {
     e.preventDefault();
