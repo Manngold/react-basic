@@ -4,7 +4,8 @@ class InputHabit extends Component {
   textInput = React.createRef();
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.onAdd(this.textInput.current.value);
+    let text = this.textInput.current.value;
+    text && this.props.onAdd(text);
     this.textInput.current.value = '';
   };
   render() {
