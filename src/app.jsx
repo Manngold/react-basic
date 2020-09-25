@@ -9,14 +9,12 @@ class App extends Component {
   state = {
     totalCount: 0,
     habits: [],
-    id: 0,
   };
   handleAdd = (name) => {
     const habits = [...this.state.habits];
-    const newHabit = { id: this.state.id, name, count: 0 };
+    const newHabit = { id: Date.now(), name, count: 0 };
     habits.push(newHabit);
     this.setState({ habits });
-    this.setState({ id: this.state.id + 1 });
   };
 
   handleIncrement = (habit) => {
