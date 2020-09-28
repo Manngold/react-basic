@@ -3,7 +3,7 @@ import Habit from './habit';
 
 class Habits extends Component {
   render() {
-    const { habits, onIncrement, onDecrement, onDelete } = this.props;
+    const { habits, onIncrement, onDecrement, onDelete, onReset } = this.props;
     return (
       <ul>
         {habits.map((habit) => {
@@ -17,6 +17,7 @@ class Habits extends Component {
             />
           );
         })}
+        <button onClick={onReset}>Reset</button>
       </ul>
     );
   }

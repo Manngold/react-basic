@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './app.css';
 import Habits from './components/habits';
 import Header from './components/header';
-import Reset from './components/reset';
-import InputHabit from './inputHabit';
+import InputHabit from './components/inputHabit';
 
 class App extends Component {
   state = {
@@ -65,8 +64,8 @@ class App extends Component {
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement}
           onDelete={this.handleDelete}
+          onReset={this.handleReset}
         />
-        <Reset onReset={this.handleReset} />
       </>
     );
   }
